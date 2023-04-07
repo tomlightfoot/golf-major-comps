@@ -1,14 +1,20 @@
-const express = require("express")
-const app = express()
+const express = require('express');
+const path = require('path');
 
-// use the express-static middleware
-// app.use(express.static("public"))
+const app = express();
 
-// define the first route
-app.get("/", function (req, res) {
-  res.send("<h1>Hello World!</h1>")
+app.use(express.static(path.join(__dirname, 'dist')));
+
+app.get('/test', (req, res) => {
+  res.send({ test: 'hello' })
 })
 
-// start the server listening for requests
-app.listen(process.env.PORT || 3000, 
-	() => console.log("Server is running..."))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
