@@ -4,6 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:tomlightfoot/golf-major-comps.git",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js"
+  },
   "dependencies": {
     "express": "^4.18.2"
   }
