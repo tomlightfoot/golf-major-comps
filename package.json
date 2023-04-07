@@ -4,6 +4,9 @@
   "main": "index.js",
   "repository": "git@github.com:tomlightfoot/golf-major-comps.git",
   "license": "MIT",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node index.js"
   },
